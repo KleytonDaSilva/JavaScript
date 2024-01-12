@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio03</title>
+</head>
+<body>
+    <h3>Informe o valor da letra A</h3>
+    <input id="n1" type="number"> <br>
+
+    <h3>Informe o valor da letra B</h3>
+    <input id="n2" type="number"><br>
+
+    <h3>Informe o valor da letra C</h3>
+    <input id="n3" type="number"><br>
+
+    <button onclick="calculo()">Resultado</button><br>
+     Resultado: <span></span>
+
+
+     <script>
+        var n1 = document.querySelector("#n1")
+        var n2 = document.querySelector("#n2")
+        var n3 =  document.querySelector("#n3")
+        var area = document.querySelector('span')
+
+        function calculo(){
+           var p = (parseFloat(n1.value) + parseFloat(n2.value) + parseFloat(n3.value)) / 2;
+           var P =  p * (parseFloat(n1.value) - p ) * (parseFloat(n2.value) - p ) * (parseFloat(n3.value) - p) 
+           area.innerHTML = Math.sqrt(P);
+        }
+
+     </script>
+
+</body>
+</html>
