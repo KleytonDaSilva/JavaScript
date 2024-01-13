@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio04</title>
+</head>
+<body>
+    <h3>Informe o valor de A: </h3>
+    <input id="a" type="number"><br>
+
+    <h3>Informe o valor de B: </h3>
+    <input id="b" type="number"><br>
+
+    <button onclick="valor()"> Resultado...</button><br>
+    h² = <span></span>
+
+
+    <script>
+        var a = document.querySelector("#a");
+        var b = document.querySelector("#b");
+        var h = document.querySelector('span');
+
+        function valor(){
+
+            h.innerHTML = (parseFloat(a.value) * parseFloat(a.value) + parseFloat(b.value * parseFloat(b.value)));
+        }
+
+    </script>
+</body>
+</html>
