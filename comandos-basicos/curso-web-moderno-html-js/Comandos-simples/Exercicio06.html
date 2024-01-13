@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio06</title>
+</head>
+<body>
+    <h3>Informe as Horas trabalhadas/mensais: </h3>
+    <input id="horas" type="number"><br>
+
+    <h3>Informe o valor Hora/trabalhadas: </h3>
+    <input id="valor" type="number"><br>
+
+    <h3>Numero de dependetes:</h3>
+    <input id="dependentes" type="number"><br>
+
+    <button onclick="calculoSalarial()"> Calculo do salario</button><br><br>
+    Salario: <span></span>
+
+    <script>
+
+        function calculoSalarial(){
+            const horas = parseFloat(document.getElementById("horas").value);
+            const valor = parseFloat(document.getElementById("valor").value);
+            const dependentes = parseFloat(document.getElementById("dependentes").value);
+
+
+            dependentes =  ((horas * salario) * ( dependentes * 0.1));
+            const salario = ((horas * salario) + dependentes);
+
+            document.querySelector("span").innerHTML = salario;
+
+        }
+        
+    </script>
+</body>
+</html>
