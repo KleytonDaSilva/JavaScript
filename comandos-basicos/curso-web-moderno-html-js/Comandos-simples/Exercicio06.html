@@ -21,13 +21,13 @@
     <script>
 
         function calculoSalarial(){
-            const horas = parseFloat(document.getElementById("horas").value);
-            const valor = parseFloat(document.getElementById("valor").value);
-            const dependentes = parseFloat(document.getElementById("dependentes").value);
+            var horas = parseInt(document.getElementById("horas").value);
+            var valor = parseInt(document.getElementById("valor").value);
+            var dependentes = parseInt(document.getElementById("dependentes").value);
 
 
-            dependentes =  ((horas * salario) * ( dependentes * 0.1));
-            const salario = ((horas * salario) + dependentes);
+            dependentes =  ((horas * valor) * ( dependentes * 0.1));
+            var salario = ((horas * valor) + dependentes);
 
             document.querySelector("span").innerHTML = salario;
 
@@ -36,3 +36,5 @@
     </script>
 </body>
 </html>
+
+

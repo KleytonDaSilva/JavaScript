@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio09</title>
+</head>
+<body>
+    
+        <h3>Informe o nome do aluno: </h3>
+        <input id="nome" type="text"><br>
+
+        <h3>Informe a primeira nota: </h3>
+        <input id="nota1" type="number"><br>
+
+        <h3>Informe a segunda nota: </h3>
+        <input id="nota2" type="number"><br>
+
+        <h3>Informe a terceira nota: </h3>
+        <input id="nota3" type="number"><br>
+
+
+        <h3>Informe o peso da primeira nota </h3>
+        <input id="peso1" type="number"><br>
+
+        <h3>Informe o peso da segunda nota </h3>
+        <input id="peso2" type="number"><br>
+
+        <h3>Informe o peso da terceira nota </h3>
+        <input id="peso3" type="number"><br>
+
+
+        <button onclick="calculoMedia()">Calculo da media</button><br>
+
+        Aluno: <span id="aluno"></span><br>
+        Media: <span id="media"></span>
+
+
+        <script>
+
+            function calculoMedia(){
+                    var nome = (document.getElementById("nome").value);
+                    var nota1 = parseFloat(document.getElementById("nota1").value);
+                    var nota2 = parseFloat(document.getElementById("nota2").value);
+                    var nota3 = parseFloat(document.getElementById("nota3").value);
+                    var peso1 = parseFloat(document.getElementById("peso1").value);
+                    var peso2 = parseFloat(document.getElementById("peso2").value);
+                    var peso3 = parseFloat(document.getElementById("peso3").value);
+
+                    var media = (peso1 * nota1) + (peso2 * nota2) + ( peso3 * nota3);
+                    var pesos = peso1 + peso2 + peso3;
+                    var media_geral = media / pesos;
+
+                    document.getElementById("aluno").innerHTML = nome;
+                    document.getElementById("media").innerHTML = media_geral;
+            }
+        </script>
+</body>
+</html>

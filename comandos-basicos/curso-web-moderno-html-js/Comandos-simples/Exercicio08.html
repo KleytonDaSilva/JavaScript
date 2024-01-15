@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio08</title>
+</head>
+<body>
+    <h3>Informe o valor do ponto x1: </h3>
+    <input id="x1" type="number"><br>
+    
+    <h3>Informe o valor do ponto x2: </h3>
+    <input id="x2" type="number"><br>
+
+    <h3>Informe o valor do ponto y1: </h3>
+    <input id="y1" type="number"><br>
+
+    <h3>Informe o valor do ponto y2: </h3>
+    <input id="y2" type="number"><br>
+
+    <button onclick="calculo()">Calculo</button><br>
+    Distancia entre dois pontos: <span></span>
+
+
+    <script>
+
+        function calculo(){
+            var x1 = parseFloat(document.getElementById("x1").value);
+            var x2 = parseFloat(document.getElementById("x2").value);
+            var y1 = parseFloat(document.getElementById("y1").value);
+            var y2 = parseFloat(document.getElementById("y2").value);
+
+            var p = (x1 * x1 - y1 * y1) + ( x2 * x2 - y2 * y2);
+            var d = Math.sqrt(p);
+
+            document.querySelector("span").innerHTML = d;
+        }
+    </script>
+</body>
+</html>

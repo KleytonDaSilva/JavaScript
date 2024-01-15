@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio07</title>
+</head>
+<body>
+
+    <h3>Informe o nome do funcionario: </h3>
+    <input id="nome" type="text"><br>
+
+    <h3>Informe as horas trabalhadas</h3>
+    <input id="horas" type="number"><br>
+
+    <h3>Informe o numero de dependetes: </h3>
+    <input id="dependentes" type="number"><br>
+
+    <button onclick="calculo()"> calculo </button><br>
+
+    funcionario : <span id="funci"></span><br>
+    salario bruto: <span id="bruto"></span><br>
+    salario Liquido: <span id="liquido"></span>
+
+
+    <script>
+
+        function calculo(){
+            var horas = parseFloat(document.getElementById("horas").value);
+            var dependentes = parseFloat(document.getElementById("dependentes").value);
+            var nome = (document.getElementById("nome").value);
+
+            horas = horas * 10;
+            dependentes = dependentes * 60;
+            var salarioBruto = horas + dependentes;
+            var inss = salarioBruto * 0.085;
+            var ir = salarioBruto * 0.05;
+            var salarioLiquido = salarioBruto - ir -inss;
+
+            document.getElementById("funci").innerHTML = nome;
+            document.getElementById("bruto").innerHTML =salarioBruto;
+            document.getElementById("liquido").innerHTML =salarioLiquido;
+            
+
+        }
+
+    </script>
+    
+</body>
+</html>

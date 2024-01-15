@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio10</title>
+</head>
+<body>
+
+        <h3>Informe o salario bruto do funcionario: </h3>
+        <input id="salario" type="number"><br>
+
+        <button onclick="calculo()">Calculo do salario liquido</button><br>
+        salario liquido: <span></span>
+
+        <script>
+
+            function calculo(){
+                var salario = parseFloat(document.getElementById("salario").value);
+
+
+                var previdencia = salario * 0.1;
+                var alimentacao = salario * 0.3;
+
+                salario = salario - previdencia - alimentacao;
+
+                document.querySelector("span").innerHTML = salario;
+            }
+        </script>
+</body>
+</html>
