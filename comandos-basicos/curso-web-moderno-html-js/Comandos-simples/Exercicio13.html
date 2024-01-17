@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio13</title>
+</head>
+<body>
+        <h3>Informe o valor de m1: </h3>
+        <input id="m1" type="number"><br>
+
+        <h3>Informe o valor de m2: </h3>
+        <input id="m2" type="number"><br>
+
+        <h3>Informe o valor de m3: </h3>
+        <input id="m3" type="number"><br>
+
+        <H3>Informe o valor de r12: </H3>
+        <input id="r12" type="number"><br>
+
+        <H3>Informe o valor de r13: </H3>
+        <input id="r13" type="number"><br>
+
+        <H3>Informe o valor de r23: </H3>
+        <input id="r23" type="number"><br>
+
+        <H3>Informe o valor de G: </H3>
+        <input id="g" type="number"><br>
+
+        <button onclick="calculo()">Calcular valor de E</button><br>
+        valor de E: <span></span>
+
+        <script>
+            function calculo(){
+                var m1 = parseFloat(document.getElementById("m1").value);
+                var m2 = parseFloat(document.getElementById("m2").value);
+                var m3 = parseFloat(document.getElementById("m3").value);
+                var r12 = parseFloat(document.getElementById("r12").value);
+                var r13 = parseFloat(document.getElementById("r13").value);
+                var r23 = parseFloat(document.getElementById("r23").value);
+                var g = parseFloat(document.getElementById("g").value);
+
+                var e = g * (( m1 * m2) + (m1 * m3) + (m2 * m3) / (r12 + r13 + r23));
+
+                document.querySelector("span").innerHTML = e;
+            }
+        </script>
+</body>
+</html>

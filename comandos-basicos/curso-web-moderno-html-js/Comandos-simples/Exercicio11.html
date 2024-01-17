@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio11</title>
+</head>
+<body>
+    <h3>Informe o valor em fahrenheit: </h3>
+    <input id="fahrenheit" type="number"><br>
+
+
+    <button onclick="calculo()">Calcular para Celsius</button><br>
+    Celsius: <span></span>
+
+
+    <script>
+        function calculo(){
+            var fahrenheit = parseFloat(document.getElementById("fahrenheit").value);
+
+            var celsius = (fahrenheit -32 ) / 1.8000;
+
+            document.querySelector("span").innerHTML = celsius;
+        }
+
+    </script>
+</body>
+</html>

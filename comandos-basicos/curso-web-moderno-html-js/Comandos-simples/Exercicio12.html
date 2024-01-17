@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio12</title>
+</head>
+<body>
+    <h3>Informe o valor de A: </h3>
+    <input id="a" type="number"><br>
+
+    <h3>Informe o valor de B: </h3>
+    <input id="b" type="number"><br>
+
+    <h3>Informe o valor de C: </h3>
+    <input id="c" type="number"><br>
+
+    <h3>Informe o valor de D: </h3>
+    <input id="d" type="number"><br>
+
+    <h3>Informe o valor de E: </h3>
+    <input id="e" type="number"><br>
+
+    <h3>Informe o valor de F: </h3>
+    <input id="f" type="number"><br>
+
+    <button onclick="calculo()"> calculo</button><br>
+    Valor de X: <span id="x"></span><br>
+    Valor de Y: <span id="y"></span>
+
+    <script>
+        function calculo(){
+            var a =parseFloat(document.getElementById("a").value);
+            var b =parseFloat(document.getElementById("b").value);
+            var c =parseFloat(document.getElementById("c").value);
+            var d =parseFloat(document.getElementById("d").value);
+            var e =parseFloat(document.getElementById("e").value);
+            var f =parseFloat(document.getElementById("f").value);
+
+            var x = (c * e) - (b * f) / (a * e) - (b * d);
+            var y = (a * f) - (c * d) / (a * e) - (b * d);
+
+            document.getElementById("x").innerHTML = x;
+            document.getElementById("y").innerHTML = y;
+        }
+
+    </script>
+    
+</body>
+</html>

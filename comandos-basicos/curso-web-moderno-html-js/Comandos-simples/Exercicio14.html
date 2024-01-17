@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio14</title>
+</head>
+<body>
+    <h3>Informe o valor de A:</h3>
+    <input id="a" type="number"><br>
+
+    <h3>Informe o valor de B</h3>
+    <input id="b" type="number"><br>
+
+    <button onclick="calculo()">Calcular </button><br>
+    Valor de A : <span id="maiorA"></span><br>
+    Valor de B : <span id="maiorB"></span>
+
+    <script>
+        function calculo(){
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+
+            var maiorA = (a + b + Math.abs(a) * ( a - b)) / 2;
+            var maiorB = (a + b + Math.abs(b) * ( a - b)) / 2;
+
+            document.getElementById("maiorA").innerHTML = maiorA;
+            document.getElementById("maiorB").innerHTML = maiorB;
+        }
+    </script>
+</body>
+</html>
