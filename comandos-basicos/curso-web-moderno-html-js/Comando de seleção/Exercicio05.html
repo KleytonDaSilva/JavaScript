@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha de Números</title>
+</head>
+<body>
+
+    <h3>Informe a opção (1, 2 ou 3): </h3>
+    <input id="opcao" type="number"><br>
+
+    <h3>Informe o primeiro número (n1): </h3>
+    <input id="n1" type="number"><br>
+
+    <h3>Informe o segundo número (n2): </h3>
+    <input id="n2" type="number"><br>
+
+    <h3>Informe o terceiro número (n3): </h3>
+    <input id="n3" type="number"><br>
+
+    <button onclick="escolherNumero()">Escolher Número</button><br>
+
+    <p id="resultado"></p>
+
+    <script>
+        function escolherNumero() {
+            var opcao = parseInt(document.getElementById("opcao").value);
+            var n1 = parseInt(document.getElementById("n1").value);
+            var n2 = parseInt(document.getElementById("n2").value);
+            var n3 = parseInt(document.getElementById("n3").value);
+
+            var resultado = "";
+
+            if (opcao === 1) {
+                resultado = "Número escolhido: " + n1;
+            } else if (opcao === 2) {
+                resultado = "Número escolhido: " + n2;
+            } else if (opcao === 3) {
+                resultado = "Número escolhido: " + n3;
+            } else {
+                resultado = "Opção inválida";
+            }
+
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>
