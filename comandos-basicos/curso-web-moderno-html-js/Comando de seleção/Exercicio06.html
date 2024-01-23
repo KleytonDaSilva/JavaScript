@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +8,70 @@
     <title>Exercicio06</title>
 </head>
 <body>
-    
+
+    <h3>Informe o valor de A:</h3>
+    <input id="a" type="number"><br>
+
+    <h3>Informe o valor de B</h3>
+    <input id="b" type="number"><br>
+
+    <h3>Informe o valor de C</h3>
+    <input id="c" type="number"><br>
+
+    <h3>Escolha de 1 a 3 :</h3>
+    <input id="opcao" type="number"><br>
+
+    <button onclick="ordenar()"> Calcular </button>
+
+    <h3>Resultado:</h3>
+    <span id="resultado"></span>
+
+    <script>
+        function ordenar() {
+            var a = parseInt(document.getElementById("a").value);
+            var b = parseInt(document.getElementById("b").value);
+            var c = parseInt(document.getElementById("c").value);
+
+            var max, med, min;
+
+            if (a > b && a > c) {
+                if (b > c) {
+                    max = a;
+                    med = b;
+                    min = c;
+                } else {
+                    max = a;
+                    med = c;
+                    min = b;
+                }
+            } else if (b > c) {
+                max = b;
+                med = (a > c) ? a : c;
+                min = (a > c) ? c : a;
+            } else {
+                max = c;
+                med = (a > b) ? a : b;
+                min = (a > b) ? b : a;
+            }
+
+            var resultado = escolha(max, med, min);
+            document.getElementById("resultado").innerHTML = resultado;
+        }
+
+        function escolha(max, med, min) {
+            var opcao = parseInt(document.getElementById("opcao").value);
+
+            if (opcao === 1) {
+                return 'Crescente: ' + min + ' ' + med + ' ' + max;
+            } else if (opcao === 2) {
+                return 'Decrescente: ' + max + ' ' + med + ' ' + min;
+            } else if (opcao === 3) {
+                return 'Maior no meio: ' + min + ' ' + max + ' ' + med;
+            } else {
+                return 'Valor inválido';
+            }
+        }
+    </script>
+
 </body>
 </html>
