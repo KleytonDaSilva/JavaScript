@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio07</title>
+</head>
+<body>
+
+        <h3>Informe o valor de X </h3>
+        <input id="x" type="number"><br>
+
+        <h3>Informe o valor de Y</h3>
+        <input id="y" type="number"><br>
+
+        <h3>Informe o valor de Z</h3>
+        <input id="z" type="number"><br>
+
+        <button onclick="triangulo()">ver qual triagulo pertence </button><br>
+        <h3>Resultado: </h3> <span></span>
+
+
+        <script>
+            function triangulo(){
+                var x = parseInt(document.getElementById("x").value);
+                var y = parseInt(document.getElementById("y").value);
+                var z = parseInt(document.getElementById("z").value);
+
+                var resultado = "";
+                if( x != y && y != z && y == z){
+                    resultado =  'Triangulo Escaleno'
+                }else{
+                    if( x == y && x == z && y == z){
+                        resultado ='Triangulo equilatero'
+                    }else{
+                        resultado = 'Triangulo isoceles'
+                    }
+                }
+
+                document.querySelector("span").innerHTML = resultado;
+            }
+        </script>
+    
+</body>
+</html>
