@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio08</title>
+</head>
+<body>
+    <h3>Informe o valor de A:</h3>
+    <input id="a" type="number"><br>
+
+    <h3>Informe o valor de B</h3>
+    <input id="b" type="number"><br>
+
+    <h3>Informe o valor de C</h3>
+    <input id="c" type="number">
+
+    <button onclick="calcular()">Calcular </button><br>
+    <h3>resultado</h3><span></span>
+
+
+    <script>
+        function calcular(){
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+
+            var raiz = b * b - 4 * a * c;
+            var resultado = " ";
+            if(raiz >= 0){
+                resultado = 'Valor da raiz !';
+            }else{
+                resultado = 'Nenhuma raiz encontrada !';
+            }
+
+            document.querySelector("span").innerHTML = raiz + " " + resultado;
+        }
+    </script>
+
+</body>
+</html>

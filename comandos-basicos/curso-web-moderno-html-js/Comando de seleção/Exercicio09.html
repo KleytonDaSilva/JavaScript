@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio09</title>
+</head>
+<body>
+        <h3>Informe o nome do funcionario: </h3>
+        <input id="nome" type="text"><br>
+
+        <h3>Informe o salario: </h3>
+        <input id="salario" type="number">
+
+        <button onclick="aumento()"></button><br>
+        <span></span>
+
+        <script>
+            function aumento(){
+                var nome = document.getElementById("nome").value;
+                var salario = parseFloat(document.getElementById("salario").value);
+
+                var novo_salario = "";
+
+                if(salario <= 400){
+                    novo_salario = salario * 0.15 + salario
+                }
+
+
+                document.querySelector("span").innerHTML = novo_salario + " " + nome;
+            }
+        </script>
+</body>
+</html>
