@@ -10,9 +10,9 @@
         <input id="nome" type="text"><br>
 
         <h3>Informe o salario: </h3>
-        <input id="salario" type="number">
+        <input id="salario" type="number"><br>
 
-        <button onclick="aumento()"></button><br>
+        <button onclick="aumento()"> calcular aumento de salario</button><br>
         <span></span>
 
         <script>
@@ -24,6 +24,24 @@
 
                 if(salario <= 400){
                     novo_salario = salario * 0.15 + salario
+                }else{
+                    if(salario > 400 && salario <= 700){
+                        novo_salario =  salario * 0.12 + salario;
+                    }else{
+                        if(salario > 700 && salario <= 1000){
+                            novo_salario =  salario * 0.10 + salario;
+                        }else{
+                            if(salario > 1000 && salario <= 1500){
+                                novo_salario = salario * 0.07 + salario;
+                            }else{
+                                if(salario > 1500 && salario <= 2000){
+                                    novo_salario = salario * 0.04 +  salario;
+                                }else{
+                                    novo_salario = 'Sem aumento no salario';
+                                }
+                            }
+                        }
+                    }
                 }
 
 

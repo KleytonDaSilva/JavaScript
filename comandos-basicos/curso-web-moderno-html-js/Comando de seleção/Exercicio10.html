@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio10</title>
+</head>
+<body>
+        <h3>Informe o nome do funcionario:</h3>
+        <input id="nome" type="text"><br>
+
+        <h3>Informe as horas extras:</h3>
+        <input id="extras" type="number"><br>
+
+        <h3>Informe numero de faltas: </h3>
+        <input id="faltas" type="number"><br>
+
+        <button onclick="calcular()">calcular</button><br>
+        <span></span>
+
+
+        <script>
+            function calcular(){
+                var nome = document.getElementById("nome").value;
+                var extras = parseFloat(document.getElementById("extras").value);
+                var faltas = parseFloat(document.getElementById("faltas").value);
+
+                extras = extras - 2/3 * faltas;
+                var resultado = "";
+
+                if(extras > 40){
+                    resultado = "Gratificacao de R$ 1000,00";
+                }else{
+                    if(extras < 30 && extras <= 40){
+                        resultado = 'Gratificacao de R$ 800,00';
+                    }else{
+                        if(extras < 20 && extras <= 30){
+                            resultado = " Gratificacao de R$ 600,00";
+                        }else{
+                            if( extras < 10 && extras <= 20){
+                                resultado = "Gratificacao de R$ 400,00";
+                            }else{
+                                resultado = "Gratificacao de R$ 200,00";
+                            }
+                        }
+                    }
+                }
+
+                document.querySelector("span").innerHTML = resultado + " " + nome;
+            }
+
+        </script>
+</body>
+</html>
