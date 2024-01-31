@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    <h3>Informe oinicio do jogo: </h3>
+    <input id="inicio" type="number"><br>
+
+    <h3>Informe o fim do jogo: </h3>
+    <input id="fim" type="number"><br>
+
+    <button onclick="calcular()">Calcular tempo:</button><br>
+    Tempo:<span> </span> /horas
+
+    <script>
+        function calcular(){
+            var inicio = parseInt(document.getElementById("inicio").value);
+            var fim = parseInt(document.getElementById("fim").value);
+
+            var total = "";
+
+            if(fim < inicio ){
+                total = (24 - inicio) + fim;
+            }else{
+                if(fim > inicio){
+                    total =  fim - inicio;
+                }else{
+                    if(fim == inicio){
+                        total = 24;
+                    }
+                }
+            }
+
+            document.querySelector("span").innerHTML = total;
+         }
+    </script>
+</body>
+</html>
