@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h3>Informe a matricula do aluno: </h3>
+        <input id="matricula" type="number"><br>
+
+        <h3>Informe a primeira nota: </h3>
+        <input id="nota1" type="number"><br>
+
+        <h3>Informe a segunda nota:</h3>
+        <input id="nota2" type="number"><br>
+
+        <h3>Informe a terceira nota: </h3>
+        <input id="nota3" type="number"><br>
+
+        <button onclick="conceito()">Conceito escolar</button>
+
+        <p id="resulMatricula"></p>
+        <p id="resulNota1"></p>
+        <p id="resulNota2"></p>
+        <p id="resulNota3"></p>
+        <p id="mediaAprovei"></p>
+        <p id="conceito"> </p>
+        <p id="resultado"></p>
+
+        <script>
+            function conceito(){
+                var nota1 = parseFloat(document.getElementById("nota1").value);
+                var nota2 = parseFloat(document.getElementById("nota2").value);
+                var nota3 = parseFloat(document.getElementById("nota3").value);
+                var matricula = parseInt(document.getElementById("matricula").value);
+
+                var aproveitamento = (nota1 * 5  + nota2 * 2 + nota3 * 3) / 10;
+                var conceito = " ";
+                var resultado = " ";
+
+                if(aproveitamento >= 9.0){
+                    conceito = " Conceito A ";
+                    resultado= " Aprovado !!";
+                }else{
+                    if(aproveitamento >= 7.5 && aproveitamento < 9.0){
+                        conceito = " Conceito B ";
+                        resultado= " Aprovado !!";
+                    }else{
+                        if(aproveitamento >= 6.0 && aproveitamento < 7.5){
+                            conceito = " Conceito C ";
+                            resultado= " Aprovado !!";
+                        }else{
+                            if(aproveitamento >= 4.0 && aproveitamento < 6.0){
+                                conceito = " Conceito D ";
+                                resultado= " Reprovado !!";
+                            }else{
+                                    conceito = " Conceito E ";
+                                    resultado= " Reprovado !!";
+                            }
+                        }
+                    }
+                }
+
+
+                document.getElementById("resulMatricula").textContent = "MAatricula: " + matricula;
+                document.getElementById("resulNota1").textContent = "Primeira nota" +nota1;
+                document.getElementById("resulNota2").textContent = "Segunda nota " +  nota2;
+                document.getElementById("resulNota3").textContent = "Terceira nota: " + nota3;
+                document.getElementById("mediaAprovei").textContent = "Media de aparoveitamento: " +aproveitamento;
+                document.getElementById("conceito").textContent = conceito;
+                document.getElementById("resultado").textContent = resultado;
+            }
+        </script>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio13</title>
+</head>
+<body>
+    <h3>Informe a poluicao da empresa: </h3>
+    <input id="empresa" type="number"><br>
+
+    <button onclick="poluicao()">Calcular a poluicao</button><br>
+    <p id="resultado"></p>
+
+    <script>
+
+        function poluicao(){
+            var empresa = parseFloat(document.getElementById("empresa").value);
+            var resultado = " "; 
+
+            if(empresa > 0.30 && empresa < 0.40){
+                resultado = " Suspender as operacoes!!!";
+            }else{
+                if(empresa >= 0.40 && empresa < 0.50){
+                    resultado = "Notificacao ";
+                }else{
+                    resultado = " Suspender as atividades imediatamente ";
+                }
+            }
+
+            document.getElementById("resultado").textContent = resultado;
+        }
+    </script>
+</body>
+</html>
